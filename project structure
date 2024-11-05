@@ -1,0 +1,78 @@
+metaverse-plugin-project/
+├── client/                         # Frontend (React.js)
+│   ├── public/                     # Public assets (images, icons, etc.)
+│   ├── src/
+│   │   ├── components/             # Reusable UI components
+│   │   │   ├── Avatar/
+│   │   │   ├── Room/
+│   │   │   └── Chat/
+│   │   ├── contexts/               # Context API for state management
+│   │   ├── hooks/                  # Custom hooks
+│   │   ├── services/               # API service for platform integration
+│   │   ├── pages/                  # Main pages (Home, Room, Profile)
+│   │   ├── styles/                 # CSS/SCSS styles
+│   │   ├── utils/                  # Utility functions
+│   │   ├── App.js                  # Main App component
+│   │   └── index.js                # Entry point
+│   └── package.json                # Frontend dependencies
+
+├── server/                         # Backend (Node.js + Express)
+│   ├── config/                     # Configuration files (e.g., env, keys)
+│   ├── controllers/                # Route controllers for API endpoints
+│   │   ├── authController.js       # Authentication logic
+│   │   ├── roomController.js       # Room management
+│   │   └── userController.js       # User profile management
+│   ├── middlewares/                # Custom middlewares (e.g., auth)
+│   ├── models/                     # Database models (e.g., User, Room)
+│   ├── routes/                     # API route definitions
+│   │   ├── authRoutes.js           # Auth routes (login, logout, etc.)
+│   │   ├── roomRoutes.js           # Room-related routes
+│   │   └── userRoutes.js           # User-related routes
+│   ├── sockets/                    # Socket.io event handlers
+│   │   ├── chat.js                 # Chat events
+│   │   ├── movement.js             # User movement events
+│   │   └── index.js                # Initialize Socket.io
+│   ├── services/                   # Service layer for business logic
+│   │   ├── authService.js          # Auth functions
+│   │   ├── roomService.js          # Room functions
+│   │   └── userService.js          # User functions
+│   ├── utils/                      # Utility functions
+│   ├── server.js                   # Express server entry point
+│   └── package.json                # Backend dependencies
+
+├── shared/                         # Shared resources between client and server
+│   ├── constants/                  # Shared constants
+│   ├── types/                      # Type definitions (if using TypeScript)
+│   └── utils/                      # Shared utility functions
+
+├── database/                       # Database setup and migrations (Supabase)
+│   ├── migrations/                 # SQL migration scripts
+│   ├── seeds/                      # Database seed files
+│   └── schema.sql                  # Database schema
+
+├── .env                            # Environment variables
+├── .gitignore                      # Git ignore file
+├── README.md                       # Project documentation
+└── docker-compose.yml              # Docker Compose for local development
+Folder Structure Breakdown
+1. client/ (Frontend)
+components/: Contains reusable React components like Avatar, Room, and Chat.
+contexts/: Context providers for state management.
+services/: Handles API calls to the backend or third-party platform plugins.
+pages/: Main page components for navigation.
+styles/: CSS or SCSS styles, organized for modular use.
+utils/: Utility functions specific to the frontend.
+2. server/ (Backend)
+config/: Holds configuration files like environment variables.
+controllers/: Houses API route handlers, separating logic for users, rooms, and authentication.
+models/: Database models that map to tables in Supabase (e.g., User, Room).
+routes/: Defines different route files for modular API endpoints.
+sockets/: Handles Socket.io events, like chat and user movement.
+services/: Contains business logic and service functions that the controllers use.
+utils/: General-purpose utilities for backend functionality.
+3. shared/
+Contains shared constants, types (for TypeScript), and utility functions used by both the client and server.
+4. database/
+migrations/: SQL migration scripts for creating or updating database tables.
+seeds/: Seed data to populate the database for testing purposes.
+schema.sql: Base SQL schema for defining tables, constraints, and relations in Supabase.
